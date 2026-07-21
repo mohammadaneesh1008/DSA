@@ -1,12 +1,12 @@
 class Solution {
     public String makeGood(String s) {
       Stack<Character> st = new Stack<>();
-      for(char ch : s.toCharArray()){
-        if(!st.isEmpty() && Math.abs(st.peek()-ch)==32){
+      for(int i=0;i<s.length();i++){
+        if(!st.isEmpty() && Math.abs(st.peek()-s.charAt(i))==32){
             st.pop();
         }
         else{
-            st.push(ch);
+            st.push(s.charAt(i));
         }
       } 
       StringBuilder sb = new StringBuilder();
