@@ -6,12 +6,7 @@ class Solution {
             sum+=a%10;
             a=a/10;
         }
-        nums[i]=sum;
-       } 
-       for(int i=0;i<nums.length;i++){
-        if(nums[i]==i){
-            return i;
-        }
+       if(i==sum) return i;
        }
        return -1;
     }
