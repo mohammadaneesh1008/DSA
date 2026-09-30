@@ -24,7 +24,7 @@ class Solution {
         ListNode second = reverseList(slow.next);
         slow.next = null;
 
-        int maxSum = 0;
+        int maxSum = -1;
         ListNode first = head;
 
         while (second != null) {
