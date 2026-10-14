@@ -1,7 +1,6 @@
 class Solution {
     public String reversePrefix(String s, char ch) {
-        int i=0;
-        while(i<s.length() && s.charAt(i)!=ch) i++;
+        int i=s.indexOf(ch);
         if(i==s.length()) return s;
         StringBuilder sb = new StringBuilder(s.substring(0,i+1));
         sb.reverse();
