@@ -1,9 +1,16 @@
 class Solution {
     public List<Integer> targetIndices(int[] nums, int target) {
-        Arrays.sort(nums);
         List<Integer> ans = new ArrayList<>();
-        for(int i=0;i<nums.length;i++){
-            if(nums[i]==target) ans.add(i);
+        int less=0;
+        int equal=0;
+        for(int x : nums){
+            if(x==target) equal++;
+            else if(x<target) less++;
+        }
+        if(less==nums.length) return ans;
+        while(equal>0){
+            ans.add(less++);
+            equal--;
         }
         return ans;
     }
