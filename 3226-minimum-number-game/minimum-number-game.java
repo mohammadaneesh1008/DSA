@@ -1,14 +1,15 @@
 class Solution {
     public int[] numberGame(int[] nums) {
         int[] ans = new int[nums.length];
+        Arrays.sort(nums);
+        int k=0;
         int i=0;
-        PriorityQueue<Integer> pq = new PriorityQueue<>();
-        for(int x : nums) pq.add(x);
-        while(!pq.isEmpty()){
-            int alice=pq.remove();
-            int bob=pq.remove();
-            ans[i++]=bob;
-            ans[i++]=alice;
+        int j=1;
+        while(j<nums.length && i<nums.length){
+            ans[k++]=nums[j];
+            ans[k++]=nums[i];
+            i+=2;
+            j+=2;
         }
         return ans;
     }
