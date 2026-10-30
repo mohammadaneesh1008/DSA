@@ -1,14 +1,13 @@
 class Solution {
     public int pivotIndex(int[] arr) {
-       if(arr.length==1) return 0;
-        for(int i=1;i<arr.length;i++){
-            arr[i]=arr[i]+arr[i-1];
-        }
+        if(arr.length==1) return 0;
+        int sum=0;
+        for(int i : arr) sum+=i;
+        int left=0;
         for(int i=0;i<arr.length;i++){
-           int l=0;
-           if(i>0) l=arr[i-1];
-           int r=arr[arr.length-1]-arr[i];
-           if(l==r) return i;
+           int right=sum-left-arr[i];
+           if(left==right) return i;
+           left+=arr[i];
         }
         return -1; 
     }
