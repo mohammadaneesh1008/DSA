@@ -4,7 +4,7 @@ class Solution {
         int ans=0;
         for(int x : nums){
             if(set.contains(x)) ans^=x;
-            else set.add(x);
+            set.add(x);
         }
         return ans;
     }
